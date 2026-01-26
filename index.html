@@ -1,226 +1,191 @@
-<!DOCTYPE html>
-<html lang="ar">
-<head>  
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta charset="UTF-8">
-<title>مادة الأحياء - الصف الثاني عشر</title>
-<style>
-  /* -------------------------
-  كود متجاوب للنصوص والمستطيلات
-------------------------- */
+<!DOCTYPE html><html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Saito Zone | سايتو زون</title>  <style>
+    :root {
+      --black: #0b0b0b;
+      --maroon: #7a0019;
+      --maroon-light: #a30025;
+      --text: #ffffff;
+    }
 
-/* النصوص والخلفية */
-body {
-  font-size: 18px;  /* حجم نص مناسب للموبايل واللابتوب */
-  line-height: 1.5;
-  color: #fff;
-  background: linear-gradient(135deg, #0d0d0d, #2b0000, #330000); /* خلفية سوداء/خمري */
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-}
+    * {
+      box-sizing: border-box;
+    }
 
-/* المستطيلات */
-.box {
-  width: 90%;              /* 90% من عرض الشاشة */
-  max-width: 400px;        /* الحد الأقصى للعرض على اللابتوب */
-  padding: 20px;           /* مساحة داخلية للنص */
-  margin: 15px auto;       /* يثبت المستطيل بالمنتصف */
-  font-size: 1.2em;        /* حجم النص داخل المستطيل */
-  text-align: center;
-  border-radius: 15px;     /* حواف مستديرة */
-  background: linear-gradient(145deg, #800000, #b30000); /* لون جميل */
-  box-shadow: 0 8px 15px rgba(0,0,0,0.5); /* ظل خفيف */
-  cursor: pointer;
-  transition: transform 0.2s; /* حركة عند المرور */
-}
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, sans-serif;
+      background: linear-gradient(180deg, #0b0b0b, #1a0000, #0b0b0b);
+      color: var(--text);
+    }
 
-/* تأثير عند مرور الماوس على المستطيل */
-.box:hover {
-  transform: scale(1.05);
-}
+    /* ===== الشريط العلوي ===== */
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 20px;
+      background: linear-gradient(90deg, var(--black), var(--maroon));
+      box-shadow: 0 4px 15px rgba(0,0,0,0.6);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
 
-/* تكبير النصوص والمستطيلات على الشاشات الصغيرة */
-@media (max-width: 500px) {
-  body {
-    font-size: 20px;  /* تكبير نصوص الصفحة */
-  }
-  .box {
-    font-size: 1.5em; /* تكبير النص داخل المستطيلات */
-    padding: 25px;    /* زيادة مساحة داخلية للمستطيل */
-  }
-}
-  body {
-  font-size: 18px;
-  line-height: 1.5;
-  color: #fff;
-}
+    .flag {
+      font-size: 26px;
+    }
 
-.box {
-  width: 90%;
-  max-width: 400px;
-  height: auto;
-  padding: 20px;
-  margin: 10px auto;
-  font-size: 1.2em;
-  text-align: center;
-}
-/* الخط العام والاتجاه */
-body {
-  font-family: 'Arial', sans-serif;
-  direction: rtl;
-  margin: 0;
-  padding: 0;
-  color: white;
-  background: linear-gradient(135deg, #0d0d0d, #2b0000, #330000); /* خلفية مودرن متدرجة */
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
+    .site-name {
+      text-align: center;
+      line-height: 1.2;
+    }
 
-/* العنوان والمعلومات */
-header {
-  text-align: center;
-  padding: 50px 20px 30px 20px;
-}
+    .site-name h1 {
+      margin: 0;
+      font-size: 22px;
+      letter-spacing: 1px;
+    }
 
-header h1 {
-  font-size: 38px;
-  margin-bottom: 10px;
-  color: #ffcccc;
-  text-shadow: 2px 2px 6px rgba(255, 255, 255, 0.2);
-}
+    .site-name span {
+      font-size: 14px;
+      opacity: 0.8;
+    }
 
-header p {
-  font-size: 18px;
-  margin: 5px 0;
-  color: #ffdddd;
-}
+    .menu-btn {
+      font-size: 26px;
+      cursor: pointer;
+    }
 
-/* الحاوية الرئيسية */
-.main-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center; /* المستطيلات بالوسط */
-  margin: 30px 0;
-  gap: 20px;
-}
+    /* ===== القائمة الجانبية ===== */
+    .side-menu {
+      position: fixed;
+      top: 0;
+      right: -280px;
+      width: 260px;
+      height: 100%;
+      background: linear-gradient(180deg, var(--black), var(--maroon));
+      box-shadow: -5px 0 20px rgba(0,0,0,0.7);
+      padding: 20px;
+      transition: right 0.3s ease;
+      z-index: 2000;
+    }
 
-/* تصميم المستطيلات */
-.box {
-  background: linear-gradient(145deg, #800000, #b30000); /* خمري مودرن */
-  color: white;
-  width: 300px;
-  padding: 25px;
-  border-radius: 15px;
-  box-shadow: 0 8px 15px rgba(0,0,0,0.5);
-  cursor: pointer;
-  transition: transform 0.4s, box-shadow 0.4s, background 0.4s;
-  font-size: 22px;
-  text-align: center;
-  font-weight: bold;
-}
+    .side-menu.open {
+      right: 0;
+    }
 
-.box:hover {
-  transform: translateY(-10px) scale(1.05);
-  box-shadow: 0 15px 25px rgba(255, 0, 0, 0.4);
-  background: linear-gradient(145deg, #b30000, #ff1a1a);
-}
+    .side-menu h3 {
+      margin-top: 0;
+      border-bottom: 1px solid rgba(255,255,255,0.2);
+      padding-bottom: 10px;
+    }
 
-/* الأقسام المخفية */
-section {
-  display: none;
-  background-color: #1a1a1a;
-  border-radius: 15px;
-  padding: 25px;
-  margin: 20px 0;
-  width: 80%;
-  max-width: 700px;
-  text-align: right;
-  box-shadow: 0 6px 15px rgba(255, 255, 255, 0.1);
-  animation: fadeIn 0.5s ease-in-out;
-}
+    .side-menu a {
+      display: block;
+      margin: 15px 0;
+      color: #fff;
+      text-decoration: none;
+      font-size: 16px;
+    }
 
-section.active {
-  display: block;
-}
+    .side-menu a:hover {
+      color: #ffb3b3;
+    }
 
-/* روابط PDF والمواقع */
-a {
-  color: #ff9999;
-  text-decoration: none;
-  display: block;
-  margin: 12px 0;
-  font-size: 18px;
-}
+    /* ===== العنوان الرئيسي ===== */
+    .hero {
+      text-align: center;
+      padding: 40px 20px 20px;
+    }
 
-a:hover {
-  text-decoration: underline;
-}
+    .hero h2 {
+      margin: 0;
+      font-size: 24px;
+    }
 
-/* تأثير ظهور الأقسام */
-@keyframes fadeIn {
-  from {opacity: 0; transform: translateY(-10px);}
-  to {opacity: 1; transform: translateY(0);}
-}
+    /* ===== المستطيلات ===== */
+    .boxes {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      padding: 30px 20px 60px;
+      max-width: 900px;
+      margin: auto;
+    }
 
-</style>
+    .box {
+      background: linear-gradient(145deg, var(--maroon), var(--maroon-light));
+      border-radius: 16px;
+      padding: 25px 15px;
+      text-align: center;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.6);
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
 
-<script>
-function showSection(id) {
-  document.querySelectorAll("section").forEach(sec => {
-    sec.classList.remove("active");
-  });
-  document.getElementById(id).classList.add("active");
-  window.scrollTo({ top: 0, behavior: 'smooth' });
-}
-</script>
-</head>
+    .box:hover {
+      transform: translateY(-6px) scale(1.03);
+    }
 
-<body>
+    .box h3 {
+      margin: 0 0 8px;
+      font-size: 18px;
+    }
 
-<header>
-  <h1>مادة الأحياء - الصف الثاني عشر (جيل 2008)</h1>
-  <p>أعداد الطالب: آدم بشير</p>
-  <p>معلم المادة: ياسر علي</p>
-</header>
+    .box span {
+      font-size: 14px;
+      opacity: 0.9;
+    }
 
-<div class="main-container">
-  <div class="box" onclick="showSection('summary')">
-    ملخصات الفصل الثاني 📄
-  </div>
+    /* ===== تجاوب الموبايل ===== */
+    @media (max-width: 500px) {
+      .site-name h1 {
+        font-size: 18px;
+      }
 
-  <div class="box" onclick="showSection('exam2')">
-    امتحانات الفصل الثاني 📝
-  </div>
-
-  <div class="box" onclick="showSection('exam1')">
-    امتحانات الفصل الأول 📝
-  </div>
+      .hero h2 {
+        font-size: 20px;
+      }
+    }
+  </style></head>
+<body>  <!-- الشريط العلوي -->  <header>
+    <div class="flag">🇯🇴</div><div class="site-name">
+  <h1>Saito Zone | سايتو زون</h1>
+  <span>علم الأحياء • توجيهي</span>
 </div>
 
-<!-- الأقسام المخفية -->
-<section id="summary">
-  <h2>ملخصات الفصل الثاني</h2>
-  <a href="lesson1.pdf" target="_blank">ملخص الدرس الأول</a>
-  <a href="lesson2.pdf" target="_blank">ملخص الدرس الثاني</a>
-</section>
+<div class="menu-btn" onclick="toggleMenu()">☰</div>
 
-<section id="exam2">
-  <h2>امتحانات الفصل الثاني</h2>
-  <a href="https://exam-site1.com" target="_blank">موقع امتحان 1</a>
-  <a href="https://exam-site2.com" target="_blank">موقع امتحان 2</a>
-</section>
+  </header>  <!-- القائمة الجانبية -->  <div class="side-menu" id="sideMenu">
+    <h3>القائمة</h3>
+    <a href="index.html">الصفحة الرئيسية</a>
+    <a href="#">About Saito Zone</a>
+  </div>  <!-- العنوان -->  <section class="hero">
+    <h2>مادة الأحياء – التوجيهي | المنهاج الأردني</h2>
+  </section>  <!-- المستطيلات -->  <section class="boxes">
+    <div class="box" onclick="location.href='bio-first.html'">
+      <h3>مادة الأحياء فصل أول</h3>
+      <span>(شرح Saito Zone)</span>
+    </div><div class="box" onclick="location.href='bio-second.html'">
+  <h3>مادة الأحياء فصل ثاني</h3>
+  <span>(شرح Saito Zone)</span>
+</div>
 
-<section id="exam1">
-  <h2>امتحانات الفصل الأول</h2>
-  <a href="https://exam-site3.com" target="_blank">موقع امتحان 1</a>
-  <a href="https://exam-site4.com" target="_blank">موقع امتحان 2</a>
-</section>
+<div class="box" onclick="location.href='exams-first.html'">
+  <h3>امتحانات فصل أول</h3>
+</div>
+<div class="box" onclick="location.href='exams-second.html'">
+  <h3>امتحانات فصل ثاني</h3>
+</div>
 
-</body>
-
+  </section>  <script>
+    function toggleMenu() {
+      document.getElementById('sideMenu').classList.toggle('open');
+    }
+  </script></body>
 </html>
 
 
