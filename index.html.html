@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<title>مادة الأحياء - الصف الثاني عشر</title>
+<style>
+/* الخط العام والاتجاه */
+body {
+  font-family: 'Arial', sans-serif;
+  direction: rtl;
+  margin: 0;
+  padding: 0;
+  color: white;
+  background: linear-gradient(135deg, #0d0d0d, #2b0000, #330000); /* خلفية مودرن متدرجة */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* العنوان والمعلومات */
+header {
+  text-align: center;
+  padding: 50px 20px 30px 20px;
+}
+
+header h1 {
+  font-size: 38px;
+  margin-bottom: 10px;
+  color: #ffcccc;
+  text-shadow: 2px 2px 6px rgba(255, 255, 255, 0.2);
+}
+
+header p {
+  font-size: 18px;
+  margin: 5px 0;
+  color: #ffdddd;
+}
+
+/* الحاوية الرئيسية */
+.main-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* المستطيلات بالوسط */
+  margin: 30px 0;
+  gap: 20px;
+}
+
+/* تصميم المستطيلات */
+.box {
+  background: linear-gradient(145deg, #800000, #b30000); /* خمري مودرن */
+  color: white;
+  width: 300px;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 8px 15px rgba(0,0,0,0.5);
+  cursor: pointer;
+  transition: transform 0.4s, box-shadow 0.4s, background 0.4s;
+  font-size: 22px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.box:hover {
+  transform: translateY(-10px) scale(1.05);
+  box-shadow: 0 15px 25px rgba(255, 0, 0, 0.4);
+  background: linear-gradient(145deg, #b30000, #ff1a1a);
+}
+
+/* الأقسام المخفية */
+section {
+  display: none;
+  background-color: #1a1a1a;
+  border-radius: 15px;
+  padding: 25px;
+  margin: 20px 0;
+  width: 80%;
+  max-width: 700px;
+  text-align: right;
+  box-shadow: 0 6px 15px rgba(255, 255, 255, 0.1);
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+section.active {
+  display: block;
+}
+
+/* روابط PDF والمواقع */
+a {
+  color: #ff9999;
+  text-decoration: none;
+  display: block;
+  margin: 12px 0;
+  font-size: 18px;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* تأثير ظهور الأقسام */
+@keyframes fadeIn {
+  from {opacity: 0; transform: translateY(-10px);}
+  to {opacity: 1; transform: translateY(0);}
+}
+
+</style>
+
+<script>
+function showSection(id) {
+  document.querySelectorAll("section").forEach(sec => {
+    sec.classList.remove("active");
+  });
+  document.getElementById(id).classList.add("active");
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+</script>
+</head>
+
+<body>
+
+<header>
+  <h1>مادة الأحياء - الصف الثاني عشر (جيل 2008)</h1>
+  <p>أعداد الطالب: آدم بشير</p>
+  <p>معلم المادة: ياسر علي</p>
+</header>
+
+<div class="main-container">
+  <div class="box" onclick="showSection('summary')">
+    ملخصات الفصل الثاني 📄
+  </div>
+
+  <div class="box" onclick="showSection('exam2')">
+    امتحانات الفصل الثاني 📝
+  </div>
+
+  <div class="box" onclick="showSection('exam1')">
+    امتحانات الفصل الأول 📝
+  </div>
+</div>
+
+<!-- الأقسام المخفية -->
+<section id="summary">
+  <h2>ملخصات الفصل الثاني</h2>
+  <a href="lesson1.pdf" target="_blank">ملخص الدرس الأول</a>
+  <a href="lesson2.pdf" target="_blank">ملخص الدرس الثاني</a>
+</section>
+
+<section id="exam2">
+  <h2>امتحانات الفصل الثاني</h2>
+  <a href="https://exam-site1.com" target="_blank">موقع امتحان 1</a>
+  <a href="https://exam-site2.com" target="_blank">موقع امتحان 2</a>
+</section>
+
+<section id="exam1">
+  <h2>امتحانات الفصل الأول</h2>
+  <a href="https://exam-site3.com" target="_blank">موقع امتحان 1</a>
+  <a href="https://exam-site4.com" target="_blank">موقع امتحان 2</a>
+</section>
+
+</body>
+</html>
