@@ -1,8 +1,11 @@
-<!DOCTYPE html><html lang="ar" dir="rtl">
+Adam, [1/27/2026 8:23 PM]
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Saito Zone | سايتو زون</title>  <style>
+  <title>Saito Zone | سايتو زون</title>  
+  <style>
     :root {
       --black: #0b0b0b;
       --maroon: #7a0019;
@@ -150,40 +153,70 @@
         font-size: 20px;
       }
     }
-  </style></head>
-<body>  <!-- الشريط العلوي -->  <header>
-    <div class="flag">🇯🇴</div><div class="site-name">
-  <h1>Saito Zone | سايتو زون</h1>
-  <span>علم الأحياء • توجيهي</span>
-</div>
-
-<div class="menu-btn" onclick="toggleMenu()">☰</div>
-
-  </header>  <!-- القائمة الجانبية -->  <div class="side-menu" id="sideMenu">
+  </style>
+</head>
+<body>  
+  <!-- الشريط العلوي -->  
+  <header>
+    <div class="flag">🇯🇴</div>
+    <div class="site-name">
+      <h1>Saito Zone | سايتو زون</h1>
+      <span>توجيهي • منهاج الأردن</span>
+    </div>
+    <div class="menu-btn" onclick="toggleMenu()">☰</div>
+  </header>  
+  
+  <!-- القائمة الجانبية -->  
+  <div class="side-menu" id="sideMenu">
     <h3>القائمة</h3>
     <a href="index.html">الصفحة الرئيسية</a>
-    <a href="about.html">About Saito Zone</a>
-  </div>  <!-- العنوان -->  <section class="hero">
+    <a href="about.html">من نحن؟</a>
+  </div>  
+  
+  <!-- العنوان -->  
+  <section class="hero">
     <h2>مادة الأحياء – التوجيهي | المنهاج الأردني</h2>
-  </section>  <!-- المستطيلات -->  <section class="boxes">
+  </section>  
+  
+  <!-- المستطيلات -->
+  <section class="boxes">
+    <!-- مستطيل العلوم الحياتية -->
     <div class="box" onclick="location.href='bio-first.html'">
       <h3>مادة الأحياء فصل أول</h3>
       <span>(شرح Saito Zone)</span>
-    </div><div class="box" onclick="location.href='bio-second.html'">
-  <h3>مادة الأحياء فصل ثاني</h3>
-  <span>(شرح Saito Zone)</span>
-</div>
+    </div>
+    <div class="box" onclick="location.href='bio-second.html'">
+      <h3>مادة الأحياء فصل ثاني</h3>
+      <span>(شرح Saito Zone)</span>
+    </div>
 
-<div class="box" onclick="location.href='exams-first.html'">
-  <h3>امتحانات فصل أول</h3>
-</div>
-<div class="box" onclick="location.href='exams-term2.html'">
-  <h3>امتحانات فصل ثاني</h3>
-</div>
+Adam, [1/27/2026 8:23 PM]
+<!-- مستطيل العلوم الحياتية الذي يفتح المستطيلات الأربعة -->
+    <div class="box" onclick="location.href='bio-living.html'">
+      <h3>العلوم الحياتية</h3>
+    </div>
 
-  </section>  <script>
+    <!-- مستطيل الكيمياء -->
+    <div class="box" onclick="location.href='chemistry.html'">
+      <h3>الكيمياء</h3>
+    </div>
+    
+    <!-- مستطيل اللغة الإنجليزية -->
+    <div class="box" onclick="location.href='english.html'">
+      <h3>اللغة الإنجليزية</h3>
+    </div>
+
+    <!-- مستطيل التربية الإسلامية -->
+    <div class="box" onclick="location.href='islamic.html'">
+      <h3>التربية الإسلامية</h3>
+    </div>
+
+  </section>  
+  
+  <script>
     function toggleMenu() {
       document.getElementById('sideMenu').classList.toggle('open');
     }
-  </script></body>
+  </script>
+</body>
 </html>
